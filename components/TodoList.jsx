@@ -1,6 +1,6 @@
 import Link from "next/link";
 import DeleteBtn from "./DeleteBtn";
-import { FaRegEdit } from "react-icons/fa";
+import { LuEdit } from "react-icons/lu";
 
 const getTodos = async () => {
     try {
@@ -37,7 +37,7 @@ const TodoList = async () => {
                             href={`/editTodo/${todo._id}`}
                             className='text-cyan-500'
                         >
-                            <FaRegEdit size={24} />
+                            <LuEdit size={24} />
                         </Link>
                     </div>
                 </div>
