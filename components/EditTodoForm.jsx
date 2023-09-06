@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { getTodoByIdAndUpdate } from "@/helpers/getTodos";
+import { getTodoByIdAndUpdate } from "@/helpers/fetchTodo";
 
 const EditTodoForm = ({ id, title, description }) => {
     const [newTitle, setNewTitle] = useState(title);

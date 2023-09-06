@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { getAllTodos } from "@/helpers/getTodos";
+import { addTodo } from "@/helpers/fetchTodo";
 
 const AddTodo = () => {
     const [title, setTitle] = useState("");
@@ -16,7 +16,7 @@ const AddTodo = () => {
             alert("Title and description are requared.");
             return;
         }
-        getAllTodos({ router, title, description });
+        addTodo({ router, title, description });
     };
 
     return (

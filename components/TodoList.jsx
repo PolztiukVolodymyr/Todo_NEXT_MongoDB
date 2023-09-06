@@ -1,23 +1,10 @@
 import Link from "next/link";
 import DeleteBtn from "./DeleteBtn";
 import { LuEdit } from "react-icons/lu";
-
-const getTodos = async () => {
-    try {
-        const res = await fetch("http://localhost:3000/api/todos", {
-            cache: "no-store",
-        });
-        if (!res.ok) {
-            throw new Error("Failed to fetch todos!");
-        }
-        return res.json();
-    } catch (error) {
-        console.log("Error loading todos", error);
-    }
-};
+import { getAllTodos } from "@/helpers/fetchTodo";
 
 const TodoList = async () => {
-    const { todos } = await getTodos();
+    const { todos } = await getAllTodos();
 
     return (
         <>

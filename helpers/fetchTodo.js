@@ -1,7 +1,9 @@
-export const getAllTodos = async ({ router, title, description }) => {
+const apiUrl = process.env.API_URL;
+
+export const addTodo = async ({ router, title, description }) => {
 
     try {
-        const res = await fetch("http://localhost:3000/api/todos", {
+        const res = await fetch(`/api/todos`, {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
@@ -20,9 +22,23 @@ export const getAllTodos = async ({ router, title, description }) => {
     }
 };
 
+export const getAllTodos = async () => {
+    try {
+        const res = await fetch(`${apiUrl}/api/todos`, {
+            cache: "no-store",
+        });
+        if (!res.ok) {
+            throw new Error("Failed to fetch todos!");
+        }
+        return res.json();
+    } catch (error) {
+        console.log("Error loading todos", error);
+    }
+};
+
 export const getTodoById = async (id) => {
     try {
-        const res = await fetch(`http://localhost:3000/api/todos/${id}`, {
+        const res = await fetch(`${apiUrl}/api/todos/${id}`, {
             cashe: "no-store",
         });
         if (!res.ok) {
@@ -37,7 +53,7 @@ export const getTodoById = async (id) => {
 export const getTodoByIdAndUpdate = async ({ id, router, newTitle, newDescription }) => {
 
     try {
-        const res = await fetch(`http://localhost:3000/api/todos/${id}`, {
+        const res = await fetch(`/api/todos/${id}`, {
             method: "PUT",
             headers: {
                 "Content-type": "application/json",
