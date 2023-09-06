@@ -33,7 +33,8 @@ const EditTodoForm = ({ id, title, description }) => {
             ></input>
             <button
                 type='submit'
-                className='bg-green-700 font-bold text-white py-3 px-6 w-fit rounded'
+                className='bg-green-700 font-bold text-white py-3 px-6 w-fit
+                rounded hover:bg-green-800 ease-in duration-300'
             >
                 Update ToDo
             </button>
