@@ -3,12 +3,15 @@ import Link from "next/link";
 const Navbar = () => {
     return (
         <nav className='flex justify-between items-center bg-emerald-900 px-8 py-3 rounded'>
-            <Link href='/' className='text-white font-bold'>
+            <Link
+                href='/'
+                className='text-white font-bold hover:scale-110 ease-in duration-200'
+            >
                 List of ...
             </Link>
             <Link
                 href='/addTodo'
-                className='bg-white p-2 rounded text-emerald-800 text-base'
+                className='bg-white p-2 rounded text-emerald-800 text-base hover:scale-105 ease-in duration-200'
             >
                 Add todo
             </Link>

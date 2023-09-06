@@ -22,7 +22,10 @@ const DeleteBtn = ({ id }) => {
     };
 
     return (
-        <button onClick={deleteTodo} className='text-red-500'>
+        <button
+            onClick={deleteTodo}
+            className='text-red-500 hover:scale-125 ease-in duration-200'
+        >
             <GoTrash size={24} />
         </button>
     );

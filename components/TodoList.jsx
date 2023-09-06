@@ -35,7 +35,7 @@ const TodoList = async () => {
                         <DeleteBtn id={todo._id} />
                         <Link
                             href={`/editTodo/${todo._id}`}
-                            className='text-cyan-500'
+                            className='text-cyan-500 hover:scale-125 ease-in duration-200'
                         >
                             <LuEdit size={24} />
                         </Link>
