@@ -22,19 +22,19 @@ export const addTodo = async ({ router, title, description }) => {
     }
 };
 
-// export const getAllTodos = async () => {
-//     try {
-//         const res = await fetch(`${apiUrl}/api/todos`, {
-//             cache: "no-store",
-//         });
-//         if (!res.ok) {
-//             throw new Error("Failed to fetch todos!");
-//         }
-//         return res.json();
-//     } catch (error) {
-//         console.log("Error loading todos", error);
-//     }
-// };
+export const getAllTodos = async () => {
+    try {
+        const res = await fetch(`${apiUrl}/api/todos`, {
+            cache: "no-store",
+        });
+        if (!res.ok) {
+            throw new Error("Failed to fetch todos!");
+        }
+        return res.json();
+    } catch (error) {
+        console.log("Error loading todos", error);
+    }
+};
 
 export const getTodoById = async (id) => {
     try {
