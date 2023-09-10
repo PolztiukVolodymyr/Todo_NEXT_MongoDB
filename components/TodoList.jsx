@@ -8,7 +8,7 @@ const TodoList = async () => {
 
     return (
         <>
-            {todos?.map((todo) => (
+            {todos.map((todo) => (
                 <div
                     key={todo._id}
                     className='p-4 border border-slate-300 my-3 flex justify-between
