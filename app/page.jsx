@@ -3,7 +3,7 @@ import TodoList from "@/components/TodoList";
 
 export default function Home() {
     return (
-        <ErrorBoundary fallback={<div>Something went wrong</div>}>
+        <ErrorBoundary fallback={<div>Something went wrong in TodoList</div>}>
             <TodoList />
         </ErrorBoundary>
     );
