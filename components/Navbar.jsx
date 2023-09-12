@@ -14,7 +14,7 @@ const Navbar = () => {
                 className='bg-white p-2 rounded text-emerald-800
                 text-base hover:scale-105 ease-in duration-200 hover:bg-green-100'
             >
-                Add todo
+                Add note
             </Link>
         </nav>
     );
