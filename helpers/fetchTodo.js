@@ -39,7 +39,7 @@ export const getAllTodos = async () => {
 export const getTodoById = async (id) => {
     try {
         const res = await fetch(`${apiUrl}/api/todos/${id}`, {
-            cashe: "no-store",
+            cache: "no-store",
         });
         if (!res.ok) {
             throw new Error("Failed to fetch todo");
