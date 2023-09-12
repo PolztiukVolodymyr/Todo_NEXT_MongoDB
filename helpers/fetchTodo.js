@@ -70,3 +70,15 @@ export const getTodoByIdAndUpdate = async ({ id, router, newTitle, newDescriptio
         console.log(error);
     }
 };
+
+export const deleteTodo = async ({ id, router }) => {
+    const confirmed = confirm("Confirm deleting.");
+    if (confirmed) {
+        const res = await fetch(`/api/todos?id=${id}`, {
+            method: "DELETE",
+        });
+        if (res.ok) {
+            router.refresh();
+        }
+    }
+};

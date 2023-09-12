@@ -2,29 +2,15 @@
 
 import { GoTrash } from "react-icons/go";
 import { useRouter } from "next/navigation";
+import { deleteTodo } from "@/helpers/fetchTodo";
 
 const DeleteBtn = ({ id }) => {
     const router = useRouter();
 
-    const deleteTodo = async () => {
-        const confirmed = confirm("Confirm deleting.");
-        if (confirmed) {
-            const res = await fetch(
-                `http://localhost:3000/api/todos?id=${id}`,
-                {
-                    method: "DELETE",
-                }
-            );
-            if (res.ok) {
-                router.refresh();
-            }
-        }
-    };
-
     return (
         <button
-            onClick={deleteTodo}
-            className='text-red-700 hover:scale-125 ease-in duration-200'
+            onClick={() => deleteTodo({ id, router })}
+            className='text-red-500 hover:scale-125 ease-in duration-200'
         >
             <GoTrash size={24} />
         </button>
@@ -32,3 +18,15 @@ const DeleteBtn = ({ id }) => {
 };
 
 export default DeleteBtn;
+
+// const deleteTodo = async () => {
+//     const confirmed = confirm("Confirm deleting.");
+//     if (confirmed) {
+//         const res = await fetch(`/api/todos?id=${id}`, {
+//             method: "DELETE",
+//         });
+//         if (res.ok) {
+//             router.refresh();
+//         }
+//     }
+// };
